@@ -2,6 +2,7 @@
 
 @import "tw-animate-css";
 @import "@fontsource-variable/sora";
+@import "@fontsource/saira-stencil-one";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -53,6 +54,8 @@ code {
 	--sidebar-accent-foreground: oklch(0.21 0.006 285.885);
 	--sidebar-border: oklch(0.92 0.004 286.32);
 	--sidebar-ring: oklch(0.871 0.006 286.286);
+	--text-shadow-primary: 0 5px 10px rgba(0,87,255,.1),0 -5px 8px rgba(255,90,0,.15),0 0 15px hsla(0,0%,100%,.15);
+	--display-font: 'Saira Stencil One', system-ui, sans-serif;
 }
 
 .dark {
@@ -127,6 +130,7 @@ code {
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--font-display: var(--display-font);
 }
 
 @layer base {
