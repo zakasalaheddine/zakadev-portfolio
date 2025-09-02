@@ -11,6 +11,8 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as TemplatesIndexRouteImport } from './routes/templates/index'
+import { Route as StoreIndexRouteImport } from './routes/store/index'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
 import { Route as ComponentsIndexRouteImport } from './routes/components/index'
 import { Route as AiAutomationsIndexRouteImport } from './routes/ai-automations/index'
 
@@ -22,6 +24,16 @@ const IndexRoute = IndexRouteImport.update({
 const TemplatesIndexRoute = TemplatesIndexRouteImport.update({
   id: '/templates/',
   path: '/templates/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StoreIndexRoute = StoreIndexRouteImport.update({
+  id: '/store/',
+  path: '/store/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ComponentsIndexRoute = ComponentsIndexRouteImport.update({
@@ -39,12 +51,16 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/ai-automations': typeof AiAutomationsIndexRoute
   '/components': typeof ComponentsIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/store': typeof StoreIndexRoute
   '/templates': typeof TemplatesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/ai-automations': typeof AiAutomationsIndexRoute
   '/components': typeof ComponentsIndexRoute
+  '/services': typeof ServicesIndexRoute
+  '/store': typeof StoreIndexRoute
   '/templates': typeof TemplatesIndexRoute
 }
 export interface FileRoutesById {
@@ -52,20 +68,43 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/ai-automations/': typeof AiAutomationsIndexRoute
   '/components/': typeof ComponentsIndexRoute
+  '/services/': typeof ServicesIndexRoute
+  '/store/': typeof StoreIndexRoute
   '/templates/': typeof TemplatesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/ai-automations' | '/components' | '/templates'
+  fullPaths:
+    | '/'
+    | '/ai-automations'
+    | '/components'
+    | '/services'
+    | '/store'
+    | '/templates'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/ai-automations' | '/components' | '/templates'
-  id: '__root__' | '/' | '/ai-automations/' | '/components/' | '/templates/'
+  to:
+    | '/'
+    | '/ai-automations'
+    | '/components'
+    | '/services'
+    | '/store'
+    | '/templates'
+  id:
+    | '__root__'
+    | '/'
+    | '/ai-automations/'
+    | '/components/'
+    | '/services/'
+    | '/store/'
+    | '/templates/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AiAutomationsIndexRoute: typeof AiAutomationsIndexRoute
   ComponentsIndexRoute: typeof ComponentsIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
+  StoreIndexRoute: typeof StoreIndexRoute
   TemplatesIndexRoute: typeof TemplatesIndexRoute
 }
 
@@ -83,6 +122,20 @@ declare module '@tanstack/react-router' {
       path: '/templates'
       fullPath: '/templates'
       preLoaderRoute: typeof TemplatesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/store/': {
+      id: '/store/'
+      path: '/store'
+      fullPath: '/store'
+      preLoaderRoute: typeof StoreIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/components/': {
@@ -106,6 +159,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AiAutomationsIndexRoute: AiAutomationsIndexRoute,
   ComponentsIndexRoute: ComponentsIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
+  StoreIndexRoute: StoreIndexRoute,
   TemplatesIndexRoute: TemplatesIndexRoute,
 }
 export const routeTree = rootRouteImport
