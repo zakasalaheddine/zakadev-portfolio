@@ -131,6 +131,7 @@ code {
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
 	--font-display: var(--display-font);
+	--animation-ping-scale: pingScale 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @layer base {
@@ -145,5 +146,16 @@ code {
 @keyframes svgMask {
 	to {
 		opacity: 1;
+	}
+}
+@keyframes pingScale {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.5);
+	}
+	100% {
+		transform: scale(1);
 	}
 }
