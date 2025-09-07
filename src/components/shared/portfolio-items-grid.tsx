@@ -73,7 +73,7 @@ const portfolioItems = [
 
 export default function PortfolioItemsGrid() {
   return (
-    <div className="grid grid-cols-6 grid-rows-2 gap-4 w-full mx-auto p-6">
+    <div className="grid grid-cols-1 md:grid-cols-6 grid-rows-2 gap-4 w-full max-w-[1200px] mx-auto p-6">
       {portfolioItems.map((item) => (
         <Link
           to={item.link}
@@ -86,7 +86,7 @@ export default function PortfolioItemsGrid() {
           <img
             src={item.image}
             alt={item.title}
-            className="w-full h-[280px] object-cover rounded-2xl border border-gray-200/50 shadow-xs"
+            className="w-full h-[180px] object-contain bg-[#F7F8FD] rounded-2xl border border-gray-200/50 shadow-xs"
           />
           <div className="flex flex-col p-2">
             <h3 className="mb-3 leading-tight text-xl font-bold">
