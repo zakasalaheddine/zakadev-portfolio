@@ -7,7 +7,7 @@
 @custom-variant dark (&:is(.dark *));
 
 body {
-	@apply m-0 bg-[#EEF1F3] text-foreground antialiased min-h-screen;
+	@apply m-0 text-foreground antialiased min-h-screen;
 	font-family: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
 		"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 		sans-serif;
