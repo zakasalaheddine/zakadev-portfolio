@@ -9,14 +9,9 @@ export const sidebarNav = [
         Icon: Icons.Compass
       },
       {
-        title: 'Projects',
-        href: '/projects',
-        Icon: Icons.PenTool
-      },
-      {
         title: 'Services',
         href: '/services',
-        Icon: Icons.HandPlatter
+        Icon: Icons.Palette
       },
       {
         title: 'About',
@@ -28,6 +23,21 @@ export const sidebarNav = [
   {
     title: 'Ressources',
     items: [
+      {
+        title: 'Components',
+        href: '/components',
+        Icon: Icons.Blocks
+      },
+      {
+        title: 'AI Automations',
+        href: '/ai-automations',
+        Icon: Icons.Bot
+      },
+      {
+        title: 'Templates',
+        href: '/templates',
+        Icon: Icons.Package
+      },
       {
         title: 'Thoughts',
         href: '/thoughts',
