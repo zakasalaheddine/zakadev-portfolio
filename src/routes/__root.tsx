@@ -46,7 +46,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           }
         >
           <AppSidebar variant="inset" />
-          <SidebarInset className="p-2">{children}</SidebarInset>
+          <SidebarInset className="p-2 max-h-[calc(100vh-20px)] overflow-y-auto">{children}</SidebarInset>
         </SidebarProvider>
         <TanstackDevtools
           config={{
