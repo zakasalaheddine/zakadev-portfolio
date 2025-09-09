@@ -11,130 +11,21 @@ import {
   MarqueeItem
 } from '@/components/ui/kibo-ui/marquee'
 import { Separator } from '@/components/ui/separator'
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger
+} from '@/components/ui/tooltip'
+import { cardsLinks, resume, stackTech, testimonials } from '@/constants/home'
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/')({
   component: RouteComponent
 })
 
-const cardsLinks = [
-  {
-    title: 'Components UI',
-    description:
-      'Reusable React and Tailwind CSS components for fast development.',
-    image: '/assets/components-2.png',
-    alt: 'Components UI',
-    link: '/components'
-  },
-  {
-    title: 'Templates',
-    description:
-      'Ready-to-use, responsive web templates built with modern frameworks.',
-    image: '/assets/templates-2.png',
-    alt: 'Templates',
-    link: '/templates'
-  },
-  {
-    title: 'AI Automations',
-    description:
-      'AI-powered automation to streamline workflows and boost productivity.',
-    image: '/assets/ai-automations-2.png',
-    alt: 'AI Automations',
-    link: '/ai-automations'
-  }
-]
-const resume = [
-  {
-    name: 'Google',
-    position: 'Head of Engineering',
-    date: '2020 - 2021',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'Google',
-    position: 'Head of Engineering',
-    date: '2020 - 2021',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'Google',
-    position: 'Head of Engineering',
-    date: '2020 - 2021',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'Google',
-    position: 'Head of Engineering',
-    date: '2020 - 2021',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  }
-]
 
-const stackTech = [
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'React',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  }
-]
 
-const testimonials = [
-  {
-    name: 'John Doe',
-    position: 'CEO',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  },
-  {
-    name: 'John Doe',
-    position: 'CEO',
-    content:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.',
-    image:
-      'https://cdn.prod.website-files.com/6501ddaa88c3e8498eab1ef2/6501ddaa88c3e8498eab1fa3_google-icon-simplefolio-x-webflow-template.svg'
-  }
-]
+
 
 function RouteComponent() {
   return (
@@ -173,15 +64,17 @@ function RouteComponent() {
             {resume.map((item, idx) => (
               <>
                 <div className="flex items-center gap-4" key={idx}>
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="rounded object-cover border border-sidebar shadow-md"
-                  />
+                  <div className="size-10 rounded p-2 border border-sidebar shadow-md">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="object-cover size-full"
+                    />
+                  </div>
                   <div className="flex flex-col flex-1">
                     <p className="font-bold">{item.name}</p>
                     <div className="flex items-center justify-between gap-2">
-                      <p className="">{item.position}</p>
+                      <p className="text-primary/50">{item.position}</p>
                       <p className="text-sm font-light text-primary/60">
                         {item.date}
                       </p>
@@ -193,7 +86,9 @@ function RouteComponent() {
             ))}
           </div>
           <div className="flex flex-col gap-4 bg-white border border-sidebar rounded-2xl p-10 w-full">
-            <h2 className="font-bold text-2xl font-primary font-display">What I Use</h2>
+            <h2 className="font-bold text-2xl font-primary font-display">
+              What I Use
+            </h2>
             <div className="flex size-full items-center justify-center bg-background">
               <Marquee>
                 <MarqueeFade side="left" />
@@ -201,14 +96,21 @@ function RouteComponent() {
                 <MarqueeContent>
                   {stackTech.map((item, index) => (
                     <MarqueeItem
-                      className="h-32 w-32 flex items-center justify-center"
+                      className="h-20 w-20 flex items-center justify-center p-3 bg-white border border-sidebar rounded-2xl"
                       key={index}
                     >
-                      <img
-                        alt={item.name}
-                        className="overflow-hidden rounded object-cover border border-sidebar shadow-md"
-                        src={item.image}
-                      />
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <img
+                            alt={item}
+                            className="overflow-hidden rounded object-cover"
+                            src={`/assets/tech/${item}.png`}
+                          />
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p className="text-sm">{item}</p>
+                        </TooltipContent>
+                      </Tooltip>
                     </MarqueeItem>
                   ))}
                 </MarqueeContent>
@@ -216,24 +118,30 @@ function RouteComponent() {
             </div>
           </div>
           <div className="flex flex-col gap-4 bg-white border border-sidebar rounded-2xl p-10 w-full">
-            <h2 className="font-bold text-2xl font-primary font-display">What Others Say</h2>
+            <h2 className="font-bold text-2xl font-primary font-display">
+              What Others Say
+            </h2>
             <Carousel opts={{ loop: true }}>
               <CarouselContent className="px-2">
                 {testimonials.map((item, idx) => (
                   <CarouselItem
                     key={idx}
-                    className="flex flex-col gap-10 bg-sidebar rounded-2xl px-5 py-3 mx-2"
+                    className="flex flex-col gap-10 rounded-2xl px-5 py-3 mx-2 bg-sidebar items-center justify-between"
                   >
-                    <p className="text-lg">{item.content}</p>
+                    <blockquote className="text-lg italic tracking-wider pt-2 text-center flex-1 flex items-center justify-center">
+                      "{item.content}"
+                    </blockquote>
                     <div className="flex items-center gap-2">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="size-10 rounded object-cover border border-sidebar shadow-md"
-                      />
+                      <div className="size-10 rounded-md p-2 border border-sidebar bg-white shadow-md">
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="object-cover size-full"
+                        />
+                      </div>
                       <p className="font-bold">{item.name}</p>
                       <p className="text-sm font-light text-primary/60">
-                        {item.position}
+                        ({item.location})
                       </p>
                     </div>
                   </CarouselItem>
