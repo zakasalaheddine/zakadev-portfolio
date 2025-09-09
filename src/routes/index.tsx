@@ -140,7 +140,7 @@ function RouteComponent() {
   return (
     <main className="flex flex-col space-y-4">
       <section className="flex flex-col space-y-4 max-w-[1200px] mx-auto p-4">
-        <h1 className="font-bold text-2xl md:text-6xl font-primary">
+        <h1 className="font-bold text-2xl md:text-6xl font-primary font-display">
           <span className="block">Crafting</span>
           <span className="block">Powerful Web Solutions</span>
           <span className="block">& Front-End Experiences</span>
@@ -166,7 +166,7 @@ function RouteComponent() {
       <section className="max-w-[1200px] p-4 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-2  gap-4 w-full">
           <div className="flex flex-col gap-4 bg-white border border-sidebar rounded-2xl p-10 w-full row-span-2">
-            <h2 className="font-bold text-2xl font-primary">
+            <h2 className="font-bold text-2xl font-primary font-display">
               Where I've Worked
             </h2>
             <div className="h-4" />
@@ -193,7 +193,7 @@ function RouteComponent() {
             ))}
           </div>
           <div className="flex flex-col gap-4 bg-white border border-sidebar rounded-2xl p-10 w-full">
-            <h2 className="font-bold text-2xl font-primary">What I Use</h2>
+            <h2 className="font-bold text-2xl font-primary font-display">What I Use</h2>
             <div className="flex size-full items-center justify-center bg-background">
               <Marquee>
                 <MarqueeFade side="left" />
@@ -216,7 +216,7 @@ function RouteComponent() {
             </div>
           </div>
           <div className="flex flex-col gap-4 bg-white border border-sidebar rounded-2xl p-10 w-full">
-            <h2 className="font-bold text-2xl font-primary">What Others Say</h2>
+            <h2 className="font-bold text-2xl font-primary font-display">What Others Say</h2>
             <Carousel opts={{ loop: true }}>
               <CarouselContent className="px-2">
                 {testimonials.map((item, idx) => (

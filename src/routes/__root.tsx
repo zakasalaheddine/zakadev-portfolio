@@ -1,5 +1,5 @@
 import { TanstackDevtools } from '@tanstack/react-devtools'
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { HeadContent, Link, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import appCss from '../styles.css?url'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
@@ -27,7 +27,8 @@ export const Route = createRootRoute({
     ]
   }),
 
-  shellComponent: RootDocument
+  shellComponent: RootDocument,
+  notFoundComponent: NotFound
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -62,5 +63,15 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
+  )
+}
+
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen space-y-4">
+      <h1 className="font-bold text-2xl md:text-6xl font-primary font-display">Not Found</h1>
+      <p className="text-sm text-primary/60">The page you are looking for does not exist.</p>
+      <Link to="/" className="text-sm text-primary/60 underline">Go back to the home page</Link>
+    </div>
   )
 }
