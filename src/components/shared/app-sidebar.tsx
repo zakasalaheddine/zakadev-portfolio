@@ -35,7 +35,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           {isExpanded && (
             <div className="flex flex-col will-change-auto">
               <div className="text-sm font-semibold">Zaka SalahEddine</div>
-              <div className="text-[10px] font-semibold text-primary/50">
+              <div className="text-[10px] font-semibold text-primary/50 text-start">
                 Full Stack Developer
               </div>
             </div>
